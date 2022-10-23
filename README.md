@@ -13,7 +13,7 @@
 
 As simple as 2 commands to run:
 
-- Initialize terraform which will set up necessary providers that are resposible for making calls and create resources. 
+- Initialize terraform which will set up necessary providers that are responsible for making calls and create resources. 
 
 ```
 terraform init
@@ -91,11 +91,11 @@ Note: this module depends on `s3` module as it needs s3 bucket to exist to be ab
 ### Enhacements: 
 - Switch to use ALB instead of ELB 
 - Add TLS certificate in `Certificate Manager` and attach to `ELB` to enable `HTTPs`, enforce redirect from `http` to `https`
-- State is managed locally however it should be managed in central store. I added an example in `providers.tf`
+- State is managed `locally` however it should be managed in central store like `s3`. I added an example in `providers.tf`.
 - Separate out `keypair` into its own module.
 - Separate out `IAM` resources into its own module.
 - Some refactoring and naming conventions revision.
 - Add terraform linting in CI/CD (Github actions may be easy and quick).
-- Wait to make sure we have at least one healthy EC2 before outputing LB DNS.
+- Wait to make sure we have at least one healthy EC2 before outputting LB DNS.
 - Port 22 is open within VPC only, add ability to open port 22 for specific port (if provided).
 - Away to trigger update to `nginx` in case s3 bucket file(s) change.
